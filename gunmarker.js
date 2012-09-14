@@ -1,9 +1,13 @@
 ;(function(d, undefined){
   var context = d.body, ctxParagraphs = [], ctxConditions = false
+  , ELM_NODE = 1;//, TXT_NODE = 3, HTML_COMMENT_NODE = 8,
   //@todo: fetch postMarkers data remotely, like:
   //  https://gist.github.com/3722306/
-  , postMarkers = ['mock-marker-class', 'post'], pmLen = postMarkers.length
-  , ELM_NODE = 1;//, TXT_NODE = 3, HTML_COMMENT_NODE = 8;
+  , postMarkers = [
+    'mock-marker-class', // made-up for demo, won't match
+    'post'               // for wordpress (at least)
+  ]
+  , pmLen = postMarkers.length;
 
   function has(ctx, cls) {
     var clsRx = new RegExp('(^|\\s)' + cls + '(\\s|$)');
@@ -34,8 +38,7 @@
     }
   }
 
-  // seek known content #id markers...
-  // @todo
+  // @todo: seek known content #id markers...
 
   // seek known content .class markers...
   while (pmLen--) {
