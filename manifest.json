@@ -1,0 +1,18 @@
+{
+  "name": "GunUp.com GunMarker",
+  "version": "0.1",
+  "manifest_version": 2,
+  "description": "Find and Markup gun models on web pages; link to product page(s) on GunUp.com",
+  "icons": {
+    "16": "favicon.ico",
+    "48": "favicon.ico"
+  },
+  "homepage_url": "http://www.gunup.com/publisher-tools/gunmarker",
+  "update_url": "http://tools.gunup.com/publisher-tools/gunmarker.chrome.xml",
+  "content_scripts": [
+    {
+      "matches" : ["http://*.com/*", "https://*.net/*"],
+      "js" : ["gunmarker.js"]
+    }
+  ]
+}
